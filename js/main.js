@@ -24,8 +24,10 @@ form.addEventListener("submit", (evento) => {
     //se o elemento já existe, a quantidade é atualizada
     if (existe) {
         itemAtual.id = existe.id
-
+        
         atualizaElemento(itemAtual)
+
+        itens[existe.id] = itemAtual
     } else {
         //se o elemento não existe ele é criado com um id correspondente ao length
         itemAtual.id = itens.length
@@ -58,5 +60,8 @@ function criaElemento(item) {
 }
 
 function atualizaElemento(item) {
-    document.querySelector("[data-id='"+item.id+"']").innerHTML = item.quantidade
+    document.querySelector("[data-id='"+ item.id +"']").innerHTML = item.quantidade
 }
+
+//TODO: Aula 04.02
+
